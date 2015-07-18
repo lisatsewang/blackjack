@@ -12,6 +12,8 @@ class window.AppView extends Backbone.View
   initialize: ->
     @render()
 
+    @model.on('gameOver', (loser) -> alert(if loser is null then "It's a tie!" else "#{loser.oppositeIdentity()} wins!"))
+
   render: ->
     @$el.children().detach()
     @$el.html @template()
