@@ -1,16 +1,27 @@
 .card {
   float: left;
   border: solid 1px black;
-  width: 100px;
+  /*width: 100px;*/
   border-radius: 5px;
-  height: 140px;
+  /*height: 140px;*/
   margin-right: 20px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .covered {
   background-color: black;
 }
 
+.covered img {
+  visibility: hidden;
+}
+
 .hand {
   overflow: auto;
+}
+
+
+body {
+  font-family: helvetica;
 }

@@ -11,6 +11,7 @@ class window.App extends Backbone.Model
 
     @get('playerHand').on('stand', @handleStand, @)
 
+
   decideLoser: ->
 
     difference = @get('playerHand').bestScorePrivate() - @get('dealerHand').bestScorePrivate()
@@ -30,3 +31,9 @@ class window.App extends Backbone.Model
   gameOver: (loser) ->
     @get('dealerHand').at(0).flip()
     @trigger('gameOver', loser)
+
+  newRound: ->
+    console.log('newRound called')
+    @set 'playerHand', @get('deck').dealPlayer()
+    @set 'dealerHand', @get('deck').dealDealer()
+    @trigger('newRound')
